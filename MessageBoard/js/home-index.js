@@ -1,8 +1,6 @@
-﻿// home-index.js
- 
-var module = angular.module("homeIndex", ['ngRoute']);
+﻿var module = angular.module("homeIndex", ['ngRoute']);
 
-module.config(function ($routeProvider) {
+module.config(["$routeProvider", function ($routeProvider) {
     $routeProvider
         .when("/", {
             controller: "topicsController",
@@ -18,9 +16,9 @@ module.config(function ($routeProvider) {
         });
 
     $routeProvider.otherwise({ redirectTo: "/" });
-})
+}]);
 
-module.factory("dataService", function ($http, $q) {
+module.factory("dataService", ["$http", "$q", function ($http, $q) {
     var _topics = [];
     var _isInit = false;
 
@@ -138,9 +136,9 @@ module.factory("dataService", function ($http, $q) {
         getTopicById: _getTopicById,
         saveReply: _saveReply
     };
-});
+}]);
  
-module.controller('topicsController', function ($scope, $http, dataService) {
+module.controller('topicsController', ["$scope", "$http", "dataService", function ($scope, $http, dataService) {
     $scope.data = dataService;
     $scope.isBusy = false;
 
@@ -159,9 +157,9 @@ module.controller('topicsController', function ($scope, $http, dataService) {
                 $scope.isBusy = false;
             });
     };
-});
+}]);
 
-module.controller('newTopicController', function ($scope, $http, $window, dataService) {
+module.controller('newTopicController', ["$scope", "$http", "$window", "dataService", function ($scope, $http, $window, dataService) {
     $scope.newTopic = {};
 
     $scope.save = function () {
@@ -175,9 +173,9 @@ module.controller('newTopicController', function ($scope, $http, $window, dataSe
             alert("Could not save new topic");
         });
     };
-});
+}]);
 
-module.controller('singleTopicController', function ($scope, dataService, $window, $routeParams) {
+module.controller('singleTopicController', ["$scope", "dataService", "$window", "$routeParams", function ($scope, dataService, $window, $routeParams) {
     $scope.topic = null;
     $scope.newReply = {};
 
@@ -188,10 +186,10 @@ module.controller('singleTopicController', function ($scope, dataService, $windo
         },
         function () {
             // error
-            // $window.location = "#/";
+            $window.location = "#/";
         });
 
-    $scope.addReply = function() {
+    $scope.addReply = function () {
         dataService.saveReply($scope.topic, $scope.newReply)
             .then(function () {
                 // Success
@@ -202,4 +200,4 @@ module.controller('singleTopicController', function ($scope, dataService, $windo
                 alert("Could not add reply");
             });
     }
-})
+}]);

@@ -382,6 +382,7 @@
     <Content Include="js\home-index.min.js.map">
       <DependentUpon>home-index.min.js</DependentUpon>
     </Content>
+    <Content Include="js\myapp.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom.js" />
     <Content Include="Scripts\custom.min.js">

@@ -58,4 +58,27 @@ describe("home-index Tests->", function () {
             expect(dataService.topics.length).toEqual(3);
         }));
     });
+
+    // Controller tests
+    describe("topicsController->", function () {
+
+        it("loads data", inject(function ($controller, $http, dataService) {
+
+            var theScope = {};
+
+            $httpBackend.expectGET("api/v1/topics?includeReplies=true");
+
+            var ctrl = $controller("topicsController", {
+                $scope: theScope,
+                $http: $http,
+                dataService: dataService
+            });
+
+            $httpBackend.flush();
+
+            expect(ctrl).not.toBeNull();
+            expect(theScope.data).toBeDefined();
+        }));
+
+    });
 });

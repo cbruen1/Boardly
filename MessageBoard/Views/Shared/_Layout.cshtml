@@ -54,11 +54,10 @@
                     <div class="padd">
                         <div class="social">
                             <!-- Social media icons. Repalce # with your profile links -->
-                            <a href="#"><img src="~/Content/Template/img/facebook.png" alt="" width="40" /></a>
-                            <a href="#"><img src="~/Content/Template/img/twitter.png" alt="" width="40" /></a>
-                            <a href="#"><img src="~/Content/Template/img/linkedin.png" alt="" width="40" /></a>
-                            <a href="#"><img src="~/Content/Template/img/googleplus.png" alt="" width="40" /></a>
-                            <a href="#"><img src="~/Content/Template/img/rss.png" alt="" width="40" /></a>
+                            <a href="http://www.facebook.com/cbruen1" target="_blank"><img src="~/Content/Template/img/facebook.png" alt="" width="40" /></a>
+                            <a href="http://www.twitter.com/CiaranBruen" target="_blank"><img src="~/Content/Template/img/twitter.png" alt="" width="40" /></a>
+                            <a href="http://ch.linkedin.com/in/ciaranbruen" target="_blank"><img src="~/Content/Template/img/linkedin.png" alt="" width="40" /></a>
+                            <a href="https://plus.google.com/+CiaranBruen" target="_blank"><img src="~/Content/Template/img/googleplus.png" alt="" width="40" /></a>
                         </div>
                     </div>
                 </div>
@@ -146,7 +145,6 @@
                                 <li>This site is built with Angular.js on the front end, ASP.NET MVC, Entity Framework, web api, and a SQL Server back end</li>
                                 <li>It shows the ability to add parent (topics) and child (replies) records dynamically and save them to the database</li>
                                 <li>It uses Bootstrap to create a fully responsive front end, which ensures it will display and work correctly on different screen sizes</li>
-                                <li>If you're seeing this that means I got it up and running on Azure - yay!</li>
                             </ul>
                         </div>
                     </div>
@@ -173,7 +171,7 @@
             <div class="row">
                 <div class="span12">
                     <!-- Copyright information -->
-                    <div class="fpadd">Copyright &copy; 2015 - <a href="#">Your Site</a> / <a href="#">Disclaimer</a> / <a href="#">Privacy Policy</a></div>
+                    <div class="fpadd">Copyright &copy; 2015 - <a href="#">Boardly</a> / <a href="#">Disclaimer</a> / <a href="#">Privacy Policy</a></div>
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -195,17 +193,5 @@
 
     @RenderSection("scripts", required: false)
 
-    <script type="text/javascript">
-
-        // alert('Hallo and welcome to the Board!');
-        $(document).ready(function () {
-            $('div.counter').on('click', function () {
-                // alert('You clicked me!' + this);
-                var ctr = parseInt($(this).find('span').html());
-                $(this).find('span').html(ctr + 1);
-            });
-        });
-
-    </script>
 </body>
 </html>

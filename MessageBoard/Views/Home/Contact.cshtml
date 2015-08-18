@@ -14,16 +14,18 @@
             <div class="entry">
                 <div class="padd">
                     <!-- Contact Page title -->
-                    <h2>Contact Us</h2>
+                    <h2>Contact Me</h2>
                     <!-- Contact Page Para -->
-                    <p>Fusce imperdiet, risus eget viverra faucibus, diam mi vestibulum libero, ut vestibulum tellus magna nec enim. Nunc dapibus varius interdum. Phasellus at lorem ut lectus fermentum convallis.</p>
+                    <p>Get in touch to discuss any software engineering projects or roles where you need a full stack .NET / Javascript / SQL developer.</p>
                 </div>
 
                 <div class="row">
                     <div class="span8">
                         <div class="padd">
                             <div class="co-form">
-                                <form class="form-horizontal" method="post">
+                                @*<form class="form-horizontal" method="post" action="~/Views/Home/Contact">*@
+                                @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+                                { 
                                     <fieldset>
                                         <div class="control-group">
                                             <label class="control-label" for="name">Name</label>
@@ -40,13 +42,6 @@
                                             </div>
                                         </div>
                                         <div class="control-group">
-                                            <label class="control-label" for="website">Website</label>
-                                            <div class="controls">
-                                                <input type="text" class="input-medium" id="website" name="website" data-val="true" data-val-required="*">
-                                                <span class="field-validation-valid" data-valmsg-for="website" data-valmsg-replace="true"></span>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
                                             <label class="control-label" for="comment">Message</label>
                                             <div class="controls">
                                                 <textarea class="input-medium" id="comment" rows="3" name="comment" data-val="true" data-val-required="*"></textarea>
@@ -57,11 +52,12 @@
                                             <button type="submit" class="btn">Send</button>
                                             @if (ViewBag.MailSent != null && ViewBag.MailSent)
                                             {
-                                                <div>Mail sent!</div>
+                                                <div>Mail sent - thank you.</div>
                                             }
                                         </div>
                                     </fieldset>
-                                </form>
+                                }
+                                @*</form>*@
                             </div>
                         </div>
                     </div>
@@ -69,12 +65,17 @@
                         <div class="padd">
                             <p class="caddress">
                                 <address>
-                                    <strong>Twitter, Inc.</strong><br>
-                                    795 Folsom Ave, Suite 600<br>
-                                    San Francisco, CA 94107<br>
-                                    <abbr title="Phone">P:</abbr> (123) 456-7890.<br><br>
-                                    <strong>Full Name</strong><br>
-                                    <a href="mailto:#">first.last@gmail.com</a>
+                                    <strong>Ciaran Bruen</strong><br>
+                                    Hildastrasse, 8004 Zurich<br>
+                                    <abbr title="Phone">Mob:</abbr> +41 (0)78 843 43 94<br><br>
+                                    <a href="mailto:#">ciaran.bruen (at) yahoo (dot) com</a><br /><br />
+                                    <strong>Online profiles</strong><br>
+                                    <a href="http://stackoverflow.com/users/177347/ciaran-bruen" target="_blank">Stackoverflow.com profile</a><br />
+                                    <a href="http://ch.linkedin.com/in/ciaranbruen" target="_blank">LinkedIn profile</a><br /><br />
+                                    <strong>Technical blog</strong><br>
+                                    <a href="http://codenodes.wordpress.com" target="_blank">Blog with various technical articles</a><br /><br />
+                                    <strong>Online code base</strong><br>
+                                    <a href="http://github.com/cbruen1" target="_blank">Github code repository</a><br />
                                 </address>
                             </p>
                         </div>
@@ -83,7 +84,7 @@
                 <div class="gmap">
                     <div class="padd">
                         <!-- Goto Google maps and copy the embed code of your location. Replace the below embed code with your code. -->
-                        <iframe height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Google+India+Bangalore,+Bennigana+Halli,+Bangalore,+Karnataka&amp;aq=0&amp;oq=google+&amp;sll=9.930582,78.12303&amp;sspn=0.192085,0.308647&amp;ie=UTF8&amp;hq=Google&amp;hnear=Bennigana+Halli,+Bangalore,+Bengaluru+Urban,+Karnataka&amp;t=m&amp;ll=12.993518,77.660294&amp;spn=0.012545,0.036006&amp;z=15&amp;output=embed"></iframe>
+                        <iframe height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Hildastrasse+6,+8004+Zürich&amp;aq=0&amp;oq=google+&amp;sll=9.930582,78.12303&amp;sspn=0.192085,0.308647&amp;ie=UTF8&amp;&amp;hnear=Zurich+Hauptbahnhof,+Zurich&amp;output=embed"></iframe>
                     </div>
                 </div>
             </div>

@@ -47,11 +47,10 @@ namespace MessageBoard.Controllers
         [HttpPost]
         public ActionResult Contact(ContactModel model)
         {
-            var msg = string.Format("Comment from: {1}{0}Email: {2}{0}Website: {3}{0}Comment: {4}{0}",
+            var msg = string.Format("Comment from: {1}{0}Email: {2}{0}Comment: {3}{0}",
                 Environment.NewLine, 
                 model.Name,
                 model.Email,
-                model.Website,
                 model.Comment);
 
             if (_mail.SendMail("noreply@yourdomain.com", "cbruen1@yahoo.com", "Website contact", msg))
